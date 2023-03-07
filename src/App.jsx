@@ -1,3 +1,4 @@
+import Stepper from './components/Stepper';
 import './styles/app.css';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       </header>
       <main>
         <div className="progressive-form-container">
-          <h1>Progress bar</h1>
+          <Stepper />
           <h1>Form</h1>
         </div>
         <div className="preview">
