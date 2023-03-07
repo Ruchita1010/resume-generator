@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 0 2rem;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  min-height: 100vh;
+  background-color: aquamarine;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.progressive-form-container {
+  margin: 0 auto;
+  flex: 1;
+  background-color: rgb(8, 72, 72);
+}
+
+.preview {
+  flex: 1;
+}
+
+.form-section {
+  display: grid;
+  place-items: center;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input {
+  padding: 0.4rem;
+  font-size: 1rem;
+  outline: none;
+}
