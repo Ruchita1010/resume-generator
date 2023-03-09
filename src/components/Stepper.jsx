@@ -10,7 +10,7 @@ class Stepper extends Component {
         {steps.map((step, i) => (
           <div key={i} className="step">
             <div className="step-item">
-              <span class="material-symbols-outlined">{step}</span>
+              <span className="material-symbols-outlined">{step}</span>
             </div>
           </div>
         ))}
