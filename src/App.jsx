@@ -1,5 +1,5 @@
-import Stepper from './components/Stepper';
 import './styles/app.css';
+import FormWizard from './components/FormWizard';
 
 function App() {
   return (
@@ -8,10 +8,7 @@ function App() {
         <div className="logo">cv generator</div>
       </header>
       <main>
-        <div className="progressive-form-container">
-          <Stepper />
-          <h1>Form</h1>
-        </div>
+        <FormWizard />
         <div className="preview">
           <h1>Preview</h1>
         </div>
