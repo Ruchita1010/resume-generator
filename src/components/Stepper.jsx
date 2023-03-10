@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/stepper.css';
+import styles from '../styles/Stepper.module.css';
 
 class Stepper extends Component {
   constructor(props) {
@@ -10,13 +10,13 @@ class Stepper extends Component {
     // names as per material icon
     const steps = ['person', 'school', 'build', 'work', 'draft'];
     return (
-      <div className="stepper">
+      <div className={styles.stepper}>
         {steps.map((step, index) => (
           // !using index as key bcoz the list is static
-          <div key={index} className="step">
+          <div key={index} className={styles.step}>
             <div
               id={index}
-              className="step-item"
+              className={styles.step_item}
               onClick={this.props.handleStepChange}>
               <span className="material-symbols-outlined">{step}</span>
             </div>

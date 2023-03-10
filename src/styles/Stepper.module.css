@@ -21,7 +21,7 @@
   background-color: rgb(246, 246, 246);
 }
 
-.step-item {
+.step_item {
   width: 3rem;
   height: 3rem;
   display: grid;
@@ -33,7 +33,7 @@
   z-index: 1;
 }
 
-.step-item span {
+.step_item span {
   /* to prevent clicking on icons as they don't have the id and as a result the step won't change. */
   pointer-events: none;
 }

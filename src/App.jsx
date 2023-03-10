@@ -1,15 +1,15 @@
-import './styles/app.css';
 import FormWizard from './components/FormWizard';
+import styles from './styles/App.module.css';
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <header>
-        <div className="logo">cv generator</div>
+        <div className={styles.logo}>cv generator</div>
       </header>
       <main>
         <FormWizard />
-        <div className="preview">
+        <div className={styles.preview}>
           <h1>Preview</h1>
         </div>
       </main>
