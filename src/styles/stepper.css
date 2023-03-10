@@ -34,3 +34,8 @@
   cursor: pointer;
   z-index: 1;
 }
+
+.step-item span {
+  /* to prevent clicking on icons as they don't have the id and as a result the step won't change. */
+  pointer-events: none;
+}
