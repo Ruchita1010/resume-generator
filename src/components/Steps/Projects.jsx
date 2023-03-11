@@ -1,6 +1,6 @@
 import React from 'react';
 import FormElement from '../FormElement';
-import styles from '../../styles/stepUtils.module.css';
+import styles from '../../styles/stepStyles.module.css';
 
 const Projects = () => {
   return (
