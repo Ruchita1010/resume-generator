@@ -9,6 +9,7 @@
   border-radius: 4px;
 }
 
+/* For step: Education, Experience and Projects */
 .card {
   padding: 2vmax;
   background-color: rgb(203, 205, 204);
@@ -29,8 +30,13 @@ button {
   cursor: pointer;
 }
 
+/* For step: Experience and Projects */
 #experience_desc_container {
   grid-area: 3 / span 2;
+}
+
+#project_desc_container {
+  grid-area: 2 / span 2;
 }
 
 .description {
