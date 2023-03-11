@@ -1,0 +1,8 @@
+.input_section {
+  margin: 3vmax;
+  display: grid;
+  place-items: start;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 1.4rem;
+  border-radius: 4px;
+}
