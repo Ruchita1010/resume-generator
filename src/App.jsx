@@ -17,7 +17,7 @@ class App extends Component {
           website: '',
         },
         education: [{ degree: '', university: '', startDate: '', endDate: '' }],
-        skills: [],
+        skills: [''],
         experience: [
           {
             role: '',
@@ -53,12 +53,21 @@ class App extends Component {
     });
   };
 
+  updateArray = (category, inputValue, currentIndex) => {
+    const { user } = this.state;
+    return user[category].map((item, index) =>
+      index === currentIndex ? (item = inputValue) : item
+    );
+  };
+
   handleInputChange = (e, field, category, index) => {
     const inputValue = e.target.value;
     const { user } = this.state;
     let newValue = null;
     if (category === 'personalDetails') {
       newValue = this.updateObject(field, category, inputValue);
+    } else if (category === 'skills') {
+      newValue = this.updateArray(category, inputValue, index);
     } else {
       newValue = this.updateObjectInArray(field, category, inputValue, index);
     }

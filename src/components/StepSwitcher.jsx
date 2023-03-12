@@ -6,7 +6,7 @@ import Projects from './Steps/Projects';
 import Skills from './Steps/Skills';
 
 const StepSwitcher = ({ step, user, handleInputChange }) => {
-  const { personalDetails, education, experience, projects } = user;
+  const { personalDetails, education, skills, experience, projects } = user;
   switch (step) {
     case 0:
       return (
@@ -23,7 +23,7 @@ const StepSwitcher = ({ step, user, handleInputChange }) => {
         />
       );
     case 2:
-      return <Skills />;
+      return <Skills skills={skills} handleInputChange={handleInputChange} />;
     case 3:
       return (
         <Experience
