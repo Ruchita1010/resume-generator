@@ -53,11 +53,3 @@ textarea {
   border: none;
   outline: none;
 }
-
-/* For Skills */
-.add_skills_btn {
-  align-self: flex-end;
-  height: 2.6rem;
-  padding: 0 1rem;
-  font-size: 1.6rem;
-}
