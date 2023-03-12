@@ -5,10 +5,16 @@ import PersonalDetails from './Steps/PersonalDetails';
 import Projects from './Steps/Projects';
 import Skills from './Steps/Skills';
 
-const StepSwitcher = ({ step }) => {
+const StepSwitcher = ({ step, user, handleInputChange }) => {
+  const { personalDetails } = user;
   switch (step) {
     case 0:
-      return <PersonalDetails />;
+      return (
+        <PersonalDetails
+          personalDetails={personalDetails}
+          handleInputChange={handleInputChange}
+        />
+      );
     case 1:
       return <Education />;
     case 2:

@@ -4,8 +4,8 @@ import Stepper from './Stepper';
 import styles from '../styles/FormWizard.module.css';
 
 class FormWizard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       step: 0,
     };
@@ -18,10 +18,15 @@ class FormWizard extends Component {
   };
 
   render() {
+    const { user, handleInputChange } = this.props;
     return (
       <div className={styles.progressive_form_container}>
         <Stepper handleStepChange={this.handleStepChange} />
-        <StepSwitcher step={this.state.step} />
+        <StepSwitcher
+          step={this.state.step}
+          user={user}
+          handleInputChange={handleInputChange}
+        />
       </div>
     );
   }
