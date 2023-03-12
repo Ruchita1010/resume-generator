@@ -2,55 +2,70 @@ import React from 'react';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Experience = () => {
+const Experience = ({ experienceCards, handleInputChange }) => {
   return (
     <>
       <div className={styles.add_btn_container}>
         <button>Add More</button>
       </div>
-      <div className={`${styles.input_section} ${styles.card}`}>
-        <FormElement
-          formAttr={{
-            type: 'text',
-            name: 'role',
-            placeholder: 'e.g. Software Engineer',
-          }}
-          otherData={{ label: 'Role', category: 'experience' }}
-        />
-        <FormElement
-          formAttr={{
-            type: 'text',
-            name: 'company',
-            placeholder: 'e.g. Petflix',
-          }}
-          otherData={{ label: 'Company', category: 'experience' }}
-        />
-        <FormElement
-          formAttr={{
-            type: 'text',
-            name: 'start-date',
-            placeholder: 'e.g. May 2020',
-          }}
-          otherData={{ label: 'Start Date', category: 'experience' }}
-        />
-        <FormElement
-          formAttr={{
-            type: 'text',
-            name: 'end-date',
-            placeholder: 'e.g. May 2023 or Present',
-          }}
-          otherData={{ label: 'End Date', category: 'experience' }}
-        />
-        <div
-          className={styles.description}
-          id={styles.experience_desc_container}>
-          <label htmlFor="experience-desc">Description</label>
-          <textarea
-            id="experience-desc"
-            placeholder="e.g. Designed RESTful APIs for data processing&#10;Implemented CI pipelines to improve software quality"></textarea>
+      {experienceCards.map((experienceCard, index) => (
+        <div key={index} className={`${styles.input_section} ${styles.card}`}>
+          <FormElement
+            formAttr={{
+              type: 'text',
+              name: 'role',
+              placeholder: 'e.g. Software Engineer',
+              value: experienceCard.role,
+              handleInputChange,
+            }}
+            otherData={{ label: 'Role', category: 'experience', index }}
+          />
+          <FormElement
+            formAttr={{
+              type: 'text',
+              name: 'company',
+              placeholder: 'e.g. Petflix',
+              value: experienceCard.company,
+              handleInputChange,
+            }}
+            otherData={{ label: 'Company', category: 'experience', index }}
+          />
+          <FormElement
+            formAttr={{
+              type: 'text',
+              name: 'startDate',
+              placeholder: 'e.g. May 2020',
+              value: experienceCard.startDate,
+              handleInputChange,
+            }}
+            otherData={{ label: 'Start Date', category: 'experience', index }}
+          />
+          <FormElement
+            formAttr={{
+              type: 'text',
+              name: 'endDate',
+              placeholder: 'e.g. May 2023 or Present',
+              value: experienceCard.endDate,
+              handleInputChange,
+            }}
+            otherData={{ label: 'End Date', category: 'experience', index }}
+          />
+          <div
+            className={styles.description}
+            id={styles.experience_desc_container}>
+            <label htmlFor="experience-desc">Description</label>
+            <textarea
+              id="experience-desc"
+              name="description"
+              placeholder="e.g. Designed RESTful APIs for data processing&#10;Implemented CI pipelines to improve software quality"
+              value={experienceCard.description}
+              onChange={(e) =>
+                handleInputChange(e, 'description', 'experience', index)
+              }></textarea>
+          </div>
+          <button>Delete</button>
         </div>
-        <button>Delete</button>
-      </div>
+      ))}
     </>
   );
 };
