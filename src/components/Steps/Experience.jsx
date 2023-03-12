@@ -10,28 +10,36 @@ const Experience = () => {
       </div>
       <div className={`${styles.input_section} ${styles.card}`}>
         <FormElement
-          label="Role"
-          type="text"
-          name="role"
-          placeholder="e.g. Software Engineer"
+          formAttr={{
+            type: 'text',
+            name: 'role',
+            placeholder: 'e.g. Software Engineer',
+          }}
+          otherData={{ label: 'Role', category: 'experience' }}
         />
         <FormElement
-          label="Company"
-          type="text"
-          name="company"
-          placeholder="e.g. Petflix"
+          formAttr={{
+            type: 'text',
+            name: 'company',
+            placeholder: 'e.g. Petflix',
+          }}
+          otherData={{ label: 'Company', category: 'experience' }}
         />
         <FormElement
-          label="Start Date"
-          type="text"
-          name="start-date"
-          placeholder="e.g. May 2020"
+          formAttr={{
+            type: 'text',
+            name: 'start-date',
+            placeholder: 'e.g. May 2020',
+          }}
+          otherData={{ label: 'Start Date', category: 'experience' }}
         />
         <FormElement
-          label="End Date"
-          type="text"
-          name="end-date"
-          placeholder="e.g. May 2023 or Present"
+          formAttr={{
+            type: 'text',
+            name: 'end-date',
+            placeholder: 'e.g. May 2023 or Present',
+          }}
+          otherData={{ label: 'End Date', category: 'experience' }}
         />
         <div
           className={styles.description}

@@ -10,16 +10,20 @@ const Projects = () => {
       </div>
       <div className={`${styles.input_section} ${styles.card}`}>
         <FormElement
-          label="Project Name"
-          type="text"
-          name="project-name"
-          placeholder="e.g. E-commerce Website"
+          formAttr={{
+            type: 'text',
+            name: 'project-name',
+            placeholder: 'e.g. E-commerce Website',
+          }}
+          otherData={{ label: 'Project Name', category: 'projects' }}
         />
         <FormElement
-          label="Technologies Used"
-          type="text"
-          name="technologies-used"
-          placeholder="e.g. React, Firebase, Git"
+          formAttr={{
+            type: 'text',
+            name: 'technologies-used',
+            placeholder: 'e.g. React, Firebase, Git',
+          }}
+          otherData={{ label: 'Technologies Used', category: 'experience' }}
         />
         <div className={styles.description} id={styles.project_desc_container}>
           <label htmlFor="project-desc">Description</label>

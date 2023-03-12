@@ -9,60 +9,74 @@ const PersonalDetails = ({ personalDetails, handleInputChange }) => {
   return (
     <div className={styles.input_section}>
       <FormElement
-        label="First Name"
-        type="text"
-        name="firstName"
-        placeholder="e.g. Charlie"
-        data={{ value: firstName, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'firstName',
+          placeholder: 'e.g. Charlie',
+          value: firstName,
+          handleInputChange,
+        }}
+        otherData={{ label: 'First Name', category: 'personalDetails' }}
       />
       <FormElement
-        label="Last Name"
-        type="text"
-        name="lastName"
-        placeholder="e.g. Kelmeckis"
-        data={{ value: lastName, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'lastName',
+          placeholder: 'e.g. Kelmeckis',
+          value: lastName,
+          handleInputChange,
+        }}
+        otherData={{ label: 'Last Name', category: 'personalDetails' }}
       />
       <FormElement
-        label="Email"
-        type="email"
-        name="email"
-        placeholder="e.g. wallflower24@gmail.com"
-        data={{ value: email, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'email',
+          placeholder: 'e.g. wallflower24@gmail.com',
+          value: email,
+          handleInputChange,
+        }}
+        otherData={{ label: 'Email', category: 'personalDetails' }}
       />
       <FormElement
-        label="Phone Number"
-        type="text"
-        name="phoneNumber"
-        placeholder="e.g. 000-123-4567"
-        data={{ value: phoneNumber, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'phoneNumber',
+          placeholder: 'e.g. 000-123-4567',
+          value: phoneNumber,
+          handleInputChange,
+        }}
+        otherData={{ label: 'Phone Number', category: 'personalDetails' }}
       />
       <FormElement
-        label="LinkedIn"
-        type="text"
-        name="linkedin"
-        placeholder="e.g. linkedin/in/charlie-kelmeckis"
-        data={{ value: linkedin, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'linkedin',
+          placeholder: 'e.g. linkedin/in/charlie-kelmeckis',
+          value: linkedin,
+          handleInputChange,
+        }}
+        otherData={{ label: 'LinkedIn', category: 'personalDetails' }}
       />
       <FormElement
-        label="Github"
-        type="text"
-        name="github"
-        placeholder="e.g. github/wallflower24"
-        data={{ value: github, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'github',
+          placeholder: 'e.g. github/wallflower24',
+          value: github,
+          handleInputChange,
+        }}
+        otherData={{ label: 'GitHub', category: 'personalDetails' }}
       />
       <FormElement
-        label="Website"
-        type="text"
-        name="website"
-        placeholder="e.g. wallflower.me"
-        data={{ value: website, category: 'personalDetails' }}
-        handleInputChange={handleInputChange}
+        formAttr={{
+          type: 'text',
+          name: 'website',
+          placeholder: 'e.g. wallflower.me',
+          value: website,
+          handleInputChange,
+        }}
+        otherData={{ label: 'Website', category: 'personalDetails' }}
       />
     </div>
   );

@@ -10,28 +10,36 @@ const Education = () => {
       </div>
       <div className={`${styles.input_section} ${styles.card}`}>
         <FormElement
-          label="Degree"
-          type="text"
-          name="degree"
-          placeholder="e.g. B.S. in Computer Science"
+          formAttr={{
+            type: 'text',
+            name: 'degree',
+            placeholder: 'e.g. B.S. in Computer Science',
+          }}
+          otherData={{ label: 'Degree', category: 'education' }}
         />
         <FormElement
-          label="University"
-          type="text"
-          name="university"
-          placeholder="e.g. Penn State University"
+          formAttr={{
+            type: 'text',
+            name: 'university',
+            placeholder: 'e.g. Penn State University',
+          }}
+          otherData={{ label: 'University', category: 'education' }}
         />
         <FormElement
-          label="Start Date"
-          type="text"
-          name="start-date"
-          placeholder="e.g. September 2012"
+          formAttr={{
+            type: 'text',
+            name: 'start-date',
+            placeholder: 'e.g. September 2012',
+          }}
+          otherData={{ label: 'Start Date', category: 'education' }}
         />
         <FormElement
-          label="End Date"
-          type="text"
-          name="end-date"
-          placeholder="e.g. May 2016 or Present"
+          formAttr={{
+            type: 'text',
+            name: 'end-date',
+            placeholder: 'e.g. May 2016 or Present',
+          }}
+          otherData={{ label: 'End Date', category: 'education' }}
         />
         <button>Delete</button>
       </div>
