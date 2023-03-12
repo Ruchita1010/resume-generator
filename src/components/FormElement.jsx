@@ -3,7 +3,7 @@ import styles from '../styles/FormElement.module.css';
 
 const FormElement = ({ formAttr, otherData }) => {
   const { type, name, placeholder, value, handleInputChange } = formAttr;
-  const { label, category } = otherData;
+  const { label, category, index = null } = otherData;
   return (
     <div className={styles.form_element}>
       <label htmlFor={name}>{label}</label>
@@ -13,7 +13,7 @@ const FormElement = ({ formAttr, otherData }) => {
         id={name}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => handleInputChange(name, category, e)}
+        onChange={(e) => handleInputChange(e, name, category, index)}
       />
     </div>
   );

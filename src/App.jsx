@@ -32,16 +32,42 @@ class App extends Component {
     };
   }
 
-  handleInputChange = (field, category, e) => {
+  updateObject = (field, category, inputValue) => {
     const { user } = this.state;
-    const updatedUser = {
-      ...user,
-      [category]: {
-        ...user[category],
-        [field]: e.target.value,
-      },
+    return {
+      ...user[category],
+      [field]: inputValue,
     };
-    this.setState({ user: updatedUser });
+  };
+
+  updateObjectInArray = (field, category, inputValue, currentIndex) => {
+    const { user } = this.state;
+    return user[category].map((item, index) => {
+      if (currentIndex === index) {
+        return {
+          ...item,
+          [field]: inputValue,
+        };
+      }
+      return item;
+    });
+  };
+
+  handleInputChange = (e, field, category, index) => {
+    const inputValue = e.target.value;
+    const { user } = this.state;
+    let newValue = null;
+    if (category === 'personalDetails') {
+      newValue = this.updateObject(field, category, inputValue);
+    } else {
+      newValue = this.updateObjectInArray(field, category, inputValue, index);
+    }
+    this.setState({
+      user: {
+        ...user,
+        [category]: newValue,
+      },
+    });
   };
 
   render() {
