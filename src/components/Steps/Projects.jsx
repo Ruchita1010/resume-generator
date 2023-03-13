@@ -4,7 +4,12 @@ import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
 const Projects = ({ projectCards, handleInputChange, addItem, deleteItem }) => {
-  const newItem = { id: uuidv4(), name: '', technologies: '', description: '' };
+  const newItem = {
+    id: uuidv4(),
+    name: '',
+    technologiesUsed: '',
+    description: '',
+  };
   return (
     <>
       <div className={styles.add_btn_container}>
@@ -38,7 +43,7 @@ const Projects = ({ projectCards, handleInputChange, addItem, deleteItem }) => {
             }}
             otherData={{
               label: 'Technologies Used',
-              category: 'experience',
+              category: 'projects',
               id: projectCard.id,
             }}
           />

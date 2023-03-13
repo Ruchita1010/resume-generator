@@ -38,7 +38,7 @@ class App extends Component {
           },
         ],
         projects: [
-          { id: uuidv4(), name: '', technologies: '', description: '' },
+          { id: uuidv4(), name: '', technologiesUsed: '', description: '' },
         ],
       },
     };
