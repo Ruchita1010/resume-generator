@@ -82,6 +82,16 @@ class App extends Component {
     });
   };
 
+  addItem = (category, newItem) => {
+    const { user } = this.state;
+    this.setState({
+      user: {
+        ...user,
+        [category]: [...user[category], newItem],
+      },
+    });
+  };
+
   render() {
     return (
       <div className={styles.app}>
@@ -92,6 +102,7 @@ class App extends Component {
           <FormWizard
             user={this.state.user}
             handleInputChange={this.handleInputChange}
+            addItem={this.addItem}
           />
           <div className={styles.preview}>
             <h1>Preview</h1>

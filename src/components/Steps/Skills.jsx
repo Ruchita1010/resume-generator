@@ -1,12 +1,14 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Skills = ({ skills, handleInputChange }) => {
+const Skills = ({ skills, handleInputChange, addItem }) => {
+  const newItem = { id: uuidv4(), skillValue: '' };
   return (
     <>
       <div className={styles.add_btn_container}>
-        <button>Add More</button>
+        <button onClick={() => addItem('skills', newItem)}>Add More</button>
       </div>
       {skills.map((skill) => (
         <div key={skill.id} className={styles.input_section}>

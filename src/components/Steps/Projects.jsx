@@ -1,12 +1,14 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Projects = ({ projectCards, handleInputChange }) => {
+const Projects = ({ projectCards, handleInputChange, addItem }) => {
+  const newItem = { id: uuidv4(), name: '', technologies: '', description: '' };
   return (
     <>
       <div className={styles.add_btn_container}>
-        <button>Add More</button>
+        <button onClick={() => addItem('projects', newItem)}>Add More</button>
       </div>
       {projectCards.map((projectCard) => (
         <div

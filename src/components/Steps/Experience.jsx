@@ -1,12 +1,21 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Experience = ({ experienceCards, handleInputChange }) => {
+const Experience = ({ experienceCards, handleInputChange, addItem }) => {
+  const newItem = {
+    id: uuidv4(),
+    role: '',
+    company: '',
+    startDate: '',
+    endDate: '',
+    description: '',
+  };
   return (
     <>
       <div className={styles.add_btn_container}>
-        <button>Add More</button>
+        <button onClick={() => addItem('experience', newItem)}>Add More</button>
       </div>
       {experienceCards.map((experienceCard) => (
         <div

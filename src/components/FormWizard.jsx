@@ -18,7 +18,7 @@ class FormWizard extends Component {
   };
 
   render() {
-    const { user, handleInputChange } = this.props;
+    const { user, handleInputChange, addItem } = this.props;
     return (
       <div className={styles.progressive_form_container}>
         <Stepper handleStepChange={this.handleStepChange} />
@@ -26,6 +26,7 @@ class FormWizard extends Component {
           step={this.state.step}
           user={user}
           handleInputChange={handleInputChange}
+          addItem={addItem}
         />
       </div>
     );
