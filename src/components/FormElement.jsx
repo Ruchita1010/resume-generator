@@ -13,7 +13,6 @@ const FormElement = ({ formAttr, otherData }) => {
       <input
         type={type}
         name={name}
-        id={name}
         placeholder={placeholder}
         value={value}
         onChange={(e) => handleInputChange(e, name, category, id)}
