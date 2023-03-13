@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Projects = ({ projectCards, handleInputChange, addItem }) => {
+const Projects = ({ projectCards, handleInputChange, addItem, deleteItem }) => {
   const newItem = { id: uuidv4(), name: '', technologies: '', description: '' };
   return (
     <>
@@ -54,7 +54,9 @@ const Projects = ({ projectCards, handleInputChange, addItem }) => {
                 handleInputChange(e, 'description', 'projects', projectCard.id)
               }></textarea>
           </div>
-          <button>Delete</button>
+          <button onClick={() => deleteItem('projects', projectCard.id)}>
+            Delete
+          </button>
         </div>
       ))}
     </>

@@ -92,6 +92,19 @@ class App extends Component {
     });
   };
 
+  deleteItem = (category, id) => {
+    const { user } = this.state;
+    if (user[category].length === 1) {
+      return;
+    }
+    this.setState({
+      user: {
+        ...user,
+        [category]: user[category].filter((item) => item.id !== id),
+      },
+    });
+  };
+
   render() {
     return (
       <div className={styles.app}>
@@ -103,6 +116,7 @@ class App extends Component {
             user={this.state.user}
             handleInputChange={this.handleInputChange}
             addItem={this.addItem}
+            deleteItem={this.deleteItem}
           />
           <div className={styles.preview}>
             <h1>Preview</h1>

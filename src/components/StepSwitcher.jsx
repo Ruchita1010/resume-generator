@@ -5,7 +5,13 @@ import PersonalDetails from './Steps/PersonalDetails';
 import Projects from './Steps/Projects';
 import Skills from './Steps/Skills';
 
-const StepSwitcher = ({ step, user, handleInputChange, addItem }) => {
+const StepSwitcher = ({
+  step,
+  user,
+  handleInputChange,
+  addItem,
+  deleteItem,
+}) => {
   const { personalDetails, education, skills, experience, projects } = user;
   switch (step) {
     case 0:
@@ -21,6 +27,7 @@ const StepSwitcher = ({ step, user, handleInputChange, addItem }) => {
           educationCards={education}
           handleInputChange={handleInputChange}
           addItem={addItem}
+          deleteItem={deleteItem}
         />
       );
     case 2:
@@ -29,6 +36,7 @@ const StepSwitcher = ({ step, user, handleInputChange, addItem }) => {
           skills={skills}
           handleInputChange={handleInputChange}
           addItem={addItem}
+          deleteItem={deleteItem}
         />
       );
     case 3:
@@ -37,6 +45,7 @@ const StepSwitcher = ({ step, user, handleInputChange, addItem }) => {
           experienceCards={experience}
           handleInputChange={handleInputChange}
           addItem={addItem}
+          deleteItem={deleteItem}
         />
       );
     case 4:
@@ -45,6 +54,7 @@ const StepSwitcher = ({ step, user, handleInputChange, addItem }) => {
           projectCards={projects}
           handleInputChange={handleInputChange}
           addItem={addItem}
+          deleteItem={deleteItem}
         />
       );
     default:

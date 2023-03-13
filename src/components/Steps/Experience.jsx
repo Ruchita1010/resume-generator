@@ -3,7 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Experience = ({ experienceCards, handleInputChange, addItem }) => {
+const Experience = ({
+  experienceCards,
+  handleInputChange,
+  addItem,
+  deleteItem,
+}) => {
   const newItem = {
     id: uuidv4(),
     role: '',
@@ -95,7 +100,9 @@ const Experience = ({ experienceCards, handleInputChange, addItem }) => {
                 )
               }></textarea>
           </div>
-          <button>Delete</button>
+          <button onClick={() => deleteItem('experience', experienceCard.id)}>
+            Delete
+          </button>
         </div>
       ))}
     </>

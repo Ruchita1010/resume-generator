@@ -3,7 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 import FormElement from '../FormElement';
 import styles from '../../styles/stepStyles.module.css';
 
-const Education = ({ educationCards, handleInputChange, addItem }) => {
+const Education = ({
+  educationCards,
+  handleInputChange,
+  addItem,
+  deleteItem,
+}) => {
   const newItem = {
     id: uuidv4(),
     degree: '',
@@ -76,7 +81,9 @@ const Education = ({ educationCards, handleInputChange, addItem }) => {
               id: educationCard.id,
             }}
           />
-          <button>Delete</button>
+          <button onClick={() => deleteItem('education', educationCard.id)}>
+            Delete
+          </button>
         </div>
       ))}
     </>
