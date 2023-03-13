@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import FormWizard from './components/FormWizard';
+import Preview from './components/Preview';
 import styles from './styles/App.module.css';
 
 class App extends Component {
@@ -118,9 +119,7 @@ class App extends Component {
             addItem={this.addItem}
             deleteItem={this.deleteItem}
           />
-          <div className={styles.preview}>
-            <h1>Preview</h1>
-          </div>
+          <Preview user={this.state.user} />
         </main>
       </div>
     );
