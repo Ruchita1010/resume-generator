@@ -53,3 +53,20 @@ textarea {
   border: none;
   outline: none;
 }
+
+/* For Skills */
+.skill_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.skill_wrapper input {
+  border-radius: 3px 0px 0px 3px;
+}
+
+.delete_skill_btn {
+  align-self: flex-end;
+  height: 2.64rem;
+  border-radius: 0px 3px 3px 0px;
+}
