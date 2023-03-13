@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import FormWizard from './components/FormWizard';
 import styles from './styles/App.module.css';
 
@@ -16,10 +17,19 @@ class App extends Component {
           github: '',
           website: '',
         },
-        education: [{ degree: '', university: '', startDate: '', endDate: '' }],
-        skills: [''],
+        education: [
+          {
+            id: uuidv4(),
+            degree: '',
+            university: '',
+            startDate: '',
+            endDate: '',
+          },
+        ],
+        skills: [{ id: uuidv4(), skillValue: '' }],
         experience: [
           {
+            id: uuidv4(),
             role: '',
             company: '',
             startDate: '',
@@ -27,7 +37,9 @@ class App extends Component {
             description: '',
           },
         ],
-        projects: [{ name: '', technologies: '', description: '' }],
+        projects: [
+          { id: uuidv4(), name: '', technologies: '', description: '' },
+        ],
       },
     };
   }
@@ -40,10 +52,10 @@ class App extends Component {
     };
   };
 
-  updateObjectInArray = (field, category, inputValue, currentIndex) => {
+  updateObjectInArray = (field, category, inputValue, id) => {
     const { user } = this.state;
-    return user[category].map((item, index) => {
-      if (currentIndex === index) {
+    return user[category].map((item) => {
+      if (item.id === id) {
         return {
           ...item,
           [field]: inputValue,
@@ -53,23 +65,14 @@ class App extends Component {
     });
   };
 
-  updateArray = (category, inputValue, currentIndex) => {
-    const { user } = this.state;
-    return user[category].map((item, index) =>
-      index === currentIndex ? (item = inputValue) : item
-    );
-  };
-
-  handleInputChange = (e, field, category, index) => {
+  handleInputChange = (e, field, category, id) => {
     const inputValue = e.target.value;
     const { user } = this.state;
     let newValue = null;
     if (category === 'personalDetails') {
       newValue = this.updateObject(field, category, inputValue);
-    } else if (category === 'skills') {
-      newValue = this.updateArray(category, inputValue, index);
     } else {
-      newValue = this.updateObjectInArray(field, category, inputValue, index);
+      newValue = this.updateObjectInArray(field, category, inputValue, id);
     }
     this.setState({
       user: {

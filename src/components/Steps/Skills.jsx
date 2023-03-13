@@ -8,17 +8,17 @@ const Skills = ({ skills, handleInputChange }) => {
       <div className={styles.add_btn_container}>
         <button>Add More</button>
       </div>
-      {skills.map((skill, index) => (
-        <div key={index} className={styles.input_section}>
+      {skills.map((skill) => (
+        <div key={skill.id} className={styles.input_section}>
           <FormElement
             formAttr={{
               type: 'text',
-              name: 'skills',
+              name: 'skillValue',
               placeholder: 'e.g. React',
-              value: skill,
+              value: skill.skillValue,
               handleInputChange,
             }}
-            otherData={{ label: 'Skill', category: 'skills', index }}
+            otherData={{ label: 'Skill', category: 'skills', id: skill.id }}
           />
         </div>
       ))}

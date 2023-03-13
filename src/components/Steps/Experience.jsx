@@ -8,8 +8,10 @@ const Experience = ({ experienceCards, handleInputChange }) => {
       <div className={styles.add_btn_container}>
         <button>Add More</button>
       </div>
-      {experienceCards.map((experienceCard, index) => (
-        <div key={index} className={`${styles.input_section} ${styles.card}`}>
+      {experienceCards.map((experienceCard) => (
+        <div
+          key={experienceCard.id}
+          className={`${styles.input_section} ${styles.card}`}>
           <FormElement
             formAttr={{
               type: 'text',
@@ -18,7 +20,11 @@ const Experience = ({ experienceCards, handleInputChange }) => {
               value: experienceCard.role,
               handleInputChange,
             }}
-            otherData={{ label: 'Role', category: 'experience', index }}
+            otherData={{
+              label: 'Role',
+              category: 'experience',
+              id: experienceCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -28,7 +34,11 @@ const Experience = ({ experienceCards, handleInputChange }) => {
               value: experienceCard.company,
               handleInputChange,
             }}
-            otherData={{ label: 'Company', category: 'experience', index }}
+            otherData={{
+              label: 'Company',
+              category: 'experience',
+              id: experienceCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -38,7 +48,11 @@ const Experience = ({ experienceCards, handleInputChange }) => {
               value: experienceCard.startDate,
               handleInputChange,
             }}
-            otherData={{ label: 'Start Date', category: 'experience', index }}
+            otherData={{
+              label: 'Start Date',
+              category: 'experience',
+              id: experienceCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -48,7 +62,11 @@ const Experience = ({ experienceCards, handleInputChange }) => {
               value: experienceCard.endDate,
               handleInputChange,
             }}
-            otherData={{ label: 'End Date', category: 'experience', index }}
+            otherData={{
+              label: 'End Date',
+              category: 'experience',
+              id: experienceCard.id,
+            }}
           />
           <div
             className={styles.description}
@@ -60,7 +78,12 @@ const Experience = ({ experienceCards, handleInputChange }) => {
               placeholder="e.g. Designed RESTful APIs for data processing&#10;Implemented CI pipelines to improve software quality"
               value={experienceCard.description}
               onChange={(e) =>
-                handleInputChange(e, 'description', 'experience', index)
+                handleInputChange(
+                  e,
+                  'description',
+                  'experience',
+                  experienceCard.id
+                )
               }></textarea>
           </div>
           <button>Delete</button>

@@ -8,8 +8,10 @@ const Projects = ({ projectCards, handleInputChange }) => {
       <div className={styles.add_btn_container}>
         <button>Add More</button>
       </div>
-      {projectCards.map((projectCard, index) => (
-        <div key={index} className={`${styles.input_section} ${styles.card}`}>
+      {projectCards.map((projectCard) => (
+        <div
+          key={projectCard.id}
+          className={`${styles.input_section} ${styles.card}`}>
           <FormElement
             formAttr={{
               type: 'text',
@@ -18,7 +20,11 @@ const Projects = ({ projectCards, handleInputChange }) => {
               value: projectCard.name,
               handleInputChange,
             }}
-            otherData={{ label: 'Project Name', category: 'projects', index }}
+            otherData={{
+              label: 'Project Name',
+              category: 'projects',
+              id: projectCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -31,7 +37,7 @@ const Projects = ({ projectCards, handleInputChange }) => {
             otherData={{
               label: 'Technologies Used',
               category: 'experience',
-              index,
+              id: projectCard.id,
             }}
           />
           <div
@@ -43,7 +49,7 @@ const Projects = ({ projectCards, handleInputChange }) => {
               placeholder="e.g. Implemented a secure payment gateway using Stripe API&#10;Integrated Firebase for user authentication"
               value={projectCard.description}
               onChange={(e) =>
-                handleInputChange(e, 'description', 'projects', index)
+                handleInputChange(e, 'description', 'projects', projectCard.id)
               }></textarea>
           </div>
           <button>Delete</button>

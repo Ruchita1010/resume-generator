@@ -8,8 +8,10 @@ const Education = ({ educationCards, handleInputChange }) => {
       <div className={styles.add_btn_container}>
         <button>Add More</button>
       </div>
-      {educationCards.map((educationCard, index) => (
-        <div key={index} className={`${styles.input_section} ${styles.card}`}>
+      {educationCards.map((educationCard) => (
+        <div
+          key={educationCard.id}
+          className={`${styles.input_section} ${styles.card}`}>
           <FormElement
             formAttr={{
               type: 'text',
@@ -18,7 +20,11 @@ const Education = ({ educationCards, handleInputChange }) => {
               value: educationCard.degree,
               handleInputChange,
             }}
-            otherData={{ label: 'Degree', category: 'education', index }}
+            otherData={{
+              label: 'Degree',
+              category: 'education',
+              id: educationCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -28,7 +34,11 @@ const Education = ({ educationCards, handleInputChange }) => {
               value: educationCard.university,
               handleInputChange,
             }}
-            otherData={{ label: 'University', category: 'education', index }}
+            otherData={{
+              label: 'University',
+              category: 'education',
+              id: educationCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -38,7 +48,11 @@ const Education = ({ educationCards, handleInputChange }) => {
               value: educationCard.startDate,
               handleInputChange,
             }}
-            otherData={{ label: 'Start Date', category: 'education', index }}
+            otherData={{
+              label: 'Start Date',
+              category: 'education',
+              id: educationCard.id,
+            }}
           />
           <FormElement
             formAttr={{
@@ -48,7 +62,11 @@ const Education = ({ educationCards, handleInputChange }) => {
               value: educationCard.endDate,
               handleInputChange,
             }}
-            otherData={{ label: 'End Date', category: 'education', index }}
+            otherData={{
+              label: 'End Date',
+              category: 'education',
+              id: educationCard.id,
+            }}
           />
           <button>Delete</button>
         </div>
