@@ -28,7 +28,11 @@ button {
   border-radius: 2px;
   border: none;
   outline: none;
+}
+
+button:hover {
   cursor: pointer;
+  transform: scale(1.04);
 }
 
 /* For step: Experience and Projects */
