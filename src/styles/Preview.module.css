@@ -20,15 +20,25 @@
 
 .section_content {
   padding-top: 6px;
+  display: grid;
+  gap: 10px;
+}
+
+.bold_styling {
+  font-weight: bold;
+}
+
+.italic_styling {
+  font-style: italic;
 }
 
 /* For Education Preview */
 .education_preview {
   display: flex;
   justify-content: space-between;
-  margin-top: 8px;
 }
 
+/* For Skills Preview */
 .skills_preview {
   display: flex;
   justify-content: flex-start;
@@ -37,46 +47,17 @@
 }
 
 /* For Experience Preview */
-.experience_preview {
-  display: grid;
-  gap: 10px;
-}
-
 .job_header {
   display: flex;
   justify-content: space-between;
 }
 
-.role {
-  font-weight: bold;
-}
-
-.company {
-  font-style: italic;
-}
-
-.job_description {
-  margin-left: 1rem;
-}
-
 /* For Projects Preview */
-.projects_preview {
-  display: grid;
-  gap: 10px;
-}
-
 .project_header {
   display: flex;
 }
 
-.project_name {
-  font-weight: bold;
-}
-
-.project_technologies {
-  font-style: italic;
-}
-
-.project_description {
+/* For both Experience and Projects Preview  */
+.description {
   margin-left: 1rem;
 }

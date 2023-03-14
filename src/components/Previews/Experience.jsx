@@ -7,18 +7,17 @@ const Experience = (props) => {
   return (
     <div className={styles.section}>
       <p className={styles.section_title}>EXPERIENCE</p>
-      <div
-        className={` ${styles.section_content} ${styles.experience_preview}`}>
+      <div className={` ${styles.section_content}`}>
         {experience.map((item) => (
           <div key={item.id}>
             <div className={styles.job_header}>
-              <p className={styles.role}>{item.role}</p>
+              <p className={styles.bold_styling}>{item.role}</p>
               <p>
                 {item.startDate} - {item.endDate}
               </p>
             </div>
-            <p className={styles.company}>{item.company}</p>
-            <ul className={styles.job_description}>
+            <p className={styles.italic_styling}>{item.company}</p>
+            <ul className={styles.description}>
               {item.description
                 .split('\n')
                 .map(
