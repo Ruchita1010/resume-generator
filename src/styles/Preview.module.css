@@ -28,3 +28,10 @@
   justify-content: space-between;
   margin-top: 8px;
 }
+
+.skills_preview {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
