@@ -8,3 +8,23 @@
   gap: 10px;
   background-color: rgb(237, 237, 237);
 }
+
+.section {
+  font-size: 15px;
+}
+
+.section_title {
+  font-size: 17px;
+  border-bottom: 1px solid #000;
+}
+
+.section_content {
+  padding-top: 6px;
+}
+
+/* For Education Preview */
+.education_preview {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
