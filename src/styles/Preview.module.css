@@ -35,3 +35,26 @@
   gap: 10px;
   flex-wrap: wrap;
 }
+
+/* For Experience Preview */
+.experience_preview {
+  display: grid;
+  gap: 10px;
+}
+
+.job_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.role {
+  font-weight: bold;
+}
+
+.company {
+  font-style: italic;
+}
+
+.job_description {
+  margin-left: 1rem;
+}
