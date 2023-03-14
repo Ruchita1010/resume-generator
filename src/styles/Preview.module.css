@@ -1,12 +1,10 @@
 .preview {
-  flex: 1 0 50%;
-  min-width: 500px;
   min-height: 100vh;
   padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: rgb(237, 237, 237);
+  background-color: var(--secondary);
 }
 
 .section {
@@ -15,7 +13,7 @@
 
 .section_title {
   font-size: 17px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--accent);
 }
 
 .section_content {

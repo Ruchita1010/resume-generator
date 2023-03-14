@@ -119,7 +119,9 @@ class App extends Component {
             addItem={this.addItem}
             deleteItem={this.deleteItem}
           />
-          <Preview user={this.state.user} />
+          <div className={styles.preview_container}>
+            <Preview user={this.state.user} />
+          </div>
         </main>
       </div>
     );

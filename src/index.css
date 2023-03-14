@@ -3,3 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary: hsl(204, 72%, 74%);
+  --secondary: hsl(60, 28%, 92%);
+  --secondary-transparent: hsla(60, 28%, 92%, 0.35);
+  --accent: hsl(0, 0%, 12%);
+}

@@ -1,3 +1,10 @@
+.app {
+  min-width: 500px;
+  color: var(--accent);
+  background-color: var(--primary); /* fallback */
+  background-image: linear-gradient(135deg, var(--primary) 0%, #9599e2 100%);
+}
+
 header {
   padding: 0 2rem;
   height: 10vh;
@@ -8,7 +15,11 @@ header {
 
 main {
   min-height: 100vh;
-  background-color: aquamarine;
   display: flex;
   flex-wrap: wrap;
+}
+
+.preview_container {
+  flex: 1 0 50%;
+  padding: 1rem;
 }
