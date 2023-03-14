@@ -52,7 +52,7 @@ const PersonalDetails = ({ personalDetails, handleInputChange }) => {
         formAttr={{
           type: 'text',
           name: 'linkedin',
-          placeholder: 'e.g. linkedin/in/charlie-kelmeckis',
+          placeholder: 'e.g. charlie-kelmeckis',
           value: linkedin,
           handleInputChange,
         }}
@@ -62,7 +62,7 @@ const PersonalDetails = ({ personalDetails, handleInputChange }) => {
         formAttr={{
           type: 'text',
           name: 'github',
-          placeholder: 'e.g. github/wallflower24',
+          placeholder: 'e.g. wallflower24',
           value: github,
           handleInputChange,
         }}
