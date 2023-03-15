@@ -104,7 +104,10 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <header>
-          <div className={styles.logo}>cv generator</div>
+          <img
+            src="https://img.icons8.com/carbon-copy/40/1f1f1f/resume.png"
+            alt="A document with a person profile along with some text representing resume"
+          />
           <div className={styles.button_menu}>
             <button onClick={this.reset}>Reset</button>
             <button onClick={this.loadSampleData}>Sample</button>
