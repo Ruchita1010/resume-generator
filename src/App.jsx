@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { pdf } from '@react-pdf/renderer';
+import { saveAs } from 'file-saver';
 import FormWizard from './components/FormWizard';
 import Preview from './components/Preview';
+import ResumePDF from './components/ResumePDF';
 import styles from './styles/App.module.css';
 
 class App extends Component {
@@ -106,11 +109,26 @@ class App extends Component {
     });
   };
 
+  getFilename = ({ firstName, lastName }) =>
+    lastName && firstName ? `${firstName}-${lastName}.pdf` : 'resume.pdf';
+
+  generatePDF = async () => {
+    try {
+      const { personalDetails } = this.state.user;
+      const blob = await pdf(<ResumePDF user={this.state.user} />).toBlob();
+      const filename = this.getFilename(personalDetails);
+      saveAs(blob, filename);
+    } catch (error) {
+      console.error(`Error generating PDF: ${error}`);
+    }
+  };
+
   render() {
     return (
       <div className={styles.app}>
         <header>
           <div className={styles.logo}>cv generator</div>
+          <button onClick={this.generatePDF}>Generate PDF</button>
         </header>
         <main>
           <FormWizard
