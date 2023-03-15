@@ -1,51 +1,17 @@
 import React, { Component } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { pdf } from '@react-pdf/renderer';
 import { saveAs } from 'file-saver';
 import FormWizard from './components/FormWizard';
 import Preview from './components/Preview';
 import ResumePDF from './components/ResumePDF';
+import { getInitalObjectState, getSampleData } from './utils/data';
 import styles from './styles/App.module.css';
 
 class App extends Component {
+  initialState = getInitalObjectState();
   constructor() {
     super();
-    this.state = {
-      user: {
-        personalDetails: {
-          firstName: '',
-          lastName: '',
-          email: '',
-          phoneNumber: '',
-          linkedin: '',
-          github: '',
-          website: '',
-        },
-        education: [
-          {
-            id: uuidv4(),
-            degree: '',
-            university: '',
-            startDate: '',
-            endDate: '',
-          },
-        ],
-        skills: [{ id: uuidv4(), skillValue: '' }],
-        experience: [
-          {
-            id: uuidv4(),
-            role: '',
-            company: '',
-            startDate: '',
-            endDate: '',
-            description: '',
-          },
-        ],
-        projects: [
-          { id: uuidv4(), name: '', technologiesUsed: '', description: '' },
-        ],
-      },
-    };
+    this.state = this.initialState;
   }
 
   updateObject = (field, category, inputValue) => {
@@ -123,12 +89,27 @@ class App extends Component {
     }
   };
 
+  loadSampleData = () => {
+    const sampleData = getSampleData();
+    this.setState({
+      user: sampleData,
+    });
+  };
+
+  reset = () => {
+    this.setState(this.initialState);
+  };
+
   render() {
     return (
       <div className={styles.app}>
         <header>
           <div className={styles.logo}>cv generator</div>
-          <button onClick={this.generatePDF}>Generate PDF</button>
+          <div className={styles.button_menu}>
+            <button onClick={this.reset}>Reset</button>
+            <button onClick={this.loadSampleData}>Sample</button>
+            <button onClick={this.generatePDF}>Generate PDF</button>
+          </div>
         </header>
         <main>
           <FormWizard

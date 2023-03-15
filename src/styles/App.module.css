@@ -13,6 +13,11 @@ header {
   align-items: center;
 }
 
+.button_menu {
+  display: flex;
+  gap: 10px;
+}
+
 main {
   min-height: 100vh;
   display: flex;
