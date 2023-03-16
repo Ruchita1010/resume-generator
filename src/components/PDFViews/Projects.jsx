@@ -8,6 +8,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 
+  name: {
+    fontWeight: 'bold',
+  },
+
+  technologiesUsed: {
+    fontStyle: 'italic',
+  },
+
   description: {
     marginLeft: 16,
   },
@@ -31,8 +39,8 @@ const Projects = ({ projects }) => {
   return projects.map((item) => (
     <View key={item.id}>
       <View style={styles.project_header}>
-        <Text>{item.name} | </Text>
-        <Text>{item.technologiesUsed}</Text>
+        <Text style={styles.name}>{item.name} | </Text>
+        <Text style={styles.technologiesUsed}>{item.technologiesUsed}</Text>
       </View>
       <ul style={styles.description}>
         {item.description.split('\n').map(

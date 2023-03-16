@@ -9,6 +9,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
+  role: {
+    fontWeight: 'bold',
+  },
+
+  company: {
+    fontStyle: 'italic',
+  },
+
   description: {
     marginLeft: 16,
   },
@@ -32,12 +40,12 @@ const Experience = ({ experience }) => {
   return experience.map((item) => (
     <View key={item.id}>
       <View style={styles.job_header}>
-        <Text>{item.role}</Text>
+        <Text style={styles.role}>{item.role}</Text>
         <Text>
           {item.startDate} - {item.endDate}
         </Text>
       </View>
-      <Text>{item.company}</Text>
+      <Text style={styles.company}>{item.company}</Text>
       <View style={styles.description}>
         {item.description.split('\n').map(
           (listItem) =>
