@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   list_item: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
     gap: 6,
   },
 
@@ -32,6 +31,7 @@ const styles = StyleSheet.create({
     height: 4,
     backgroundColor: '#1f1f1f',
     borderRadius: 50,
+    marginTop: 4, // add margin to align with list content
   },
 });
 
