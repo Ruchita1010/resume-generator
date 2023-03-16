@@ -75,3 +75,11 @@
 .description {
   margin-left: 1rem;
 }
+
+.description li::marker {
+  font-size: 14px;
+}
+
+.description li {
+  margin-bottom: 1px;
+}

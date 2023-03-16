@@ -24,11 +24,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     gap: 6,
+    marginBottom: 1,
   },
 
   bulletPoint: {
-    width: 4,
-    height: 4,
+    width: 3,
+    height: 3,
     backgroundColor: '#1f1f1f',
     borderRadius: 50,
     marginTop: 4, // add margin to align with list content
