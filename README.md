@@ -21,11 +21,10 @@ A Resume Generator application built with React for TheOdinProject. The app allo
 
 ## Roadmap
 
-[ ] Customizability:<br>
-&nbsp;[ ] Add functionality for changing the color of the title or name<br>
-&nbsp;[ ] Add functionality for reordering the sections<br>
-&nbsp;[ ] Add templates<br>
-[ ] Add input field for project links
+- [ ] Add functionality for changing the color of the title or name
+- [ ] Add functionality for reordering the sections
+- [ ] Add templates
+- [ ] Add input field for project links
 
 ## Learnings
 
