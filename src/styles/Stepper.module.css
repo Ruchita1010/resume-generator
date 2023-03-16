@@ -29,8 +29,12 @@
   position: relative;
   background-color: var(--secondary);
   border-radius: 50%;
-  cursor: pointer;
   z-index: 1;
+}
+
+.step_item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .step_item span {
