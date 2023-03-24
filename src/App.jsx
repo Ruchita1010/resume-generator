@@ -9,7 +9,7 @@ import styles from './styles/App.module.css';
 
 const App = () => {
   const initialState = getInitalObjectState();
-  const [user, setUser] = useState(() => initialState);
+  const [user, setUser] = useState(initialState);
 
   const handleInputChange = (e, field, category, id) => {
     const inputValue = e.target.value;
