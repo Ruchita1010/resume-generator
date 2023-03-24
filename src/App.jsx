@@ -11,33 +11,14 @@ const App = () => {
   const initialState = getInitalObjectState();
   const [user, setUser] = useState(() => initialState);
 
-  const updateObject = (field, category, inputValue) => {
-    return {
-      ...user[category],
-      [field]: inputValue,
-    };
-  };
-
-  const updateObjectInArray = (field, category, inputValue, id) => {
-    return user[category].map((item) => {
-      if (item.id === id) {
-        return {
-          ...item,
-          [field]: inputValue,
-        };
-      }
-      return item;
-    });
-  };
-
   const handleInputChange = (e, field, category, id) => {
     const inputValue = e.target.value;
-    let newValue = null;
-    if (category === 'personalDetails') {
-      newValue = updateObject(field, category, inputValue);
-    } else {
-      newValue = updateObjectInArray(field, category, inputValue, id);
-    }
+    let newValue =
+      category === 'personalDetails'
+        ? { ...user[category], [field]: inputValue }
+        : user[category].map((item) =>
+            item.id === id ? { ...item, [field]: inputValue } : item
+          );
     setUser({
       ...user,
       [category]: newValue,
