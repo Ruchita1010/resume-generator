@@ -2,40 +2,38 @@ import { v4 as uuidv4 } from 'uuid';
 
 const getInitalObjectState = () => {
   return {
-    user: {
-      personalDetails: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        linkedin: '',
-        github: '',
-        website: '',
-      },
-      education: [
-        {
-          id: uuidv4(),
-          degree: '',
-          university: '',
-          startDate: '',
-          endDate: '',
-        },
-      ],
-      skills: [{ id: uuidv4(), skillValue: '' }],
-      experience: [
-        {
-          id: uuidv4(),
-          role: '',
-          company: '',
-          startDate: '',
-          endDate: '',
-          description: '',
-        },
-      ],
-      projects: [
-        { id: uuidv4(), name: '', technologiesUsed: '', description: '' },
-      ],
+    personalDetails: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      linkedin: '',
+      github: '',
+      website: '',
     },
+    education: [
+      {
+        id: uuidv4(),
+        degree: '',
+        university: '',
+        startDate: '',
+        endDate: '',
+      },
+    ],
+    skills: [{ id: uuidv4(), skillValue: '' }],
+    experience: [
+      {
+        id: uuidv4(),
+        role: '',
+        company: '',
+        startDate: '',
+        endDate: '',
+        description: '',
+      },
+    ],
+    projects: [
+      { id: uuidv4(), name: '', technologiesUsed: '', description: '' },
+    ],
   };
 };
 

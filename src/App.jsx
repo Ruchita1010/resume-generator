@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import { saveAs } from 'file-saver';
 import FormWizard from './components/FormWizard';
@@ -7,23 +7,18 @@ import ResumePDF from './components/ResumePDF';
 import { getInitalObjectState, getSampleData } from './utils/data';
 import styles from './styles/App.module.css';
 
-class App extends Component {
-  initialState = getInitalObjectState();
-  constructor() {
-    super();
-    this.state = this.initialState;
-  }
+const App = () => {
+  const initialState = getInitalObjectState();
+  const [user, setUser] = useState(() => initialState);
 
-  updateObject = (field, category, inputValue) => {
-    const { user } = this.state;
+  const updateObject = (field, category, inputValue) => {
     return {
       ...user[category],
       [field]: inputValue,
     };
   };
 
-  updateObjectInArray = (field, category, inputValue, id) => {
-    const { user } = this.state;
+  const updateObjectInArray = (field, category, inputValue, id) => {
     return user[category].map((item) => {
       if (item.id === id) {
         return {
@@ -35,99 +30,86 @@ class App extends Component {
     });
   };
 
-  handleInputChange = (e, field, category, id) => {
+  const handleInputChange = (e, field, category, id) => {
     const inputValue = e.target.value;
-    const { user } = this.state;
     let newValue = null;
     if (category === 'personalDetails') {
-      newValue = this.updateObject(field, category, inputValue);
+      newValue = updateObject(field, category, inputValue);
     } else {
-      newValue = this.updateObjectInArray(field, category, inputValue, id);
+      newValue = updateObjectInArray(field, category, inputValue, id);
     }
-    this.setState({
-      user: {
-        ...user,
-        [category]: newValue,
-      },
+    setUser({
+      ...user,
+      [category]: newValue,
     });
   };
 
-  addItem = (category, newItem) => {
-    const { user } = this.state;
-    this.setState({
-      user: {
-        ...user,
-        [category]: [...user[category], newItem],
-      },
+  const addItem = (category, newItem) => {
+    setUser({
+      ...user,
+      [category]: [...user[category], newItem],
     });
   };
 
-  deleteItem = (category, id) => {
-    const { user } = this.state;
+  const deleteItem = (category, id) => {
     if (user[category].length === 1) {
       return;
     }
-    this.setState({
-      user: {
-        ...user,
-        [category]: user[category].filter((item) => item.id !== id),
-      },
+    setUser({
+      ...user,
+      [category]: user[category].filter((item) => item.id !== id),
     });
   };
 
-  getFilename = ({ firstName, lastName }) =>
+  const getFilename = ({ firstName, lastName }) =>
     lastName && firstName ? `${firstName}-${lastName}.pdf` : 'resume.pdf';
 
-  generatePDF = async () => {
+  const generatePDF = async () => {
     try {
-      const { personalDetails } = this.state.user;
-      const blob = await pdf(<ResumePDF user={this.state.user} />).toBlob();
-      const filename = this.getFilename(personalDetails);
+      const { personalDetails } = user;
+      const blob = await pdf(<ResumePDF user={user} />).toBlob();
+      const filename = getFilename(personalDetails);
       saveAs(blob, filename);
     } catch (error) {
       console.error(`Error generating PDF: ${error}`);
     }
   };
 
-  loadSampleData = () => {
+  const loadSampleData = () => {
     const sampleData = getSampleData();
-    this.setState({
-      user: sampleData,
-    });
+    setUser(sampleData);
   };
 
-  reset = () => {
-    this.setState(this.initialState);
+  const reset = () => {
+    setUser(initialState);
   };
 
-  render() {
-    return (
-      <div className={styles.app}>
-        <header>
-          <img
-            src="https://img.icons8.com/carbon-copy/40/1f1f1f/resume.png"
-            alt="A document with a person profile along with some text representing resume"
-          />
-          <div className={styles.button_menu}>
-            <button onClick={this.reset}>Reset</button>
-            <button onClick={this.loadSampleData}>Sample</button>
-            <button onClick={this.generatePDF}>Generate PDF</button>
-          </div>
-        </header>
-        <main>
-          <FormWizard
-            user={this.state.user}
-            handleInputChange={this.handleInputChange}
-            addItem={this.addItem}
-            deleteItem={this.deleteItem}
-          />
-          <div className={styles.preview_container}>
-            <Preview user={this.state.user} />
-          </div>
-        </main>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={styles.app}>
+      <header>
+        <img
+          src="https://img.icons8.com/carbon-copy/40/1f1f1f/resume.png"
+          alt="A document with a person profile along with some text representing resume"
+        />
+        <div className={styles.button_menu}>
+          <button onClick={reset}>Reset</button>
+          <button onClick={loadSampleData}>Sample</button>
+          <button onClick={generatePDF}>Generate PDF</button>
+        </div>
+      </header>
+      <main>
+        <FormWizard
+          user={user}
+          handleInputChange={handleInputChange}
+          addItem={addItem}
+          deleteItem={deleteItem}
+        />
+        <div className={styles.preview_container}>
+          <Preview user={user} />
+        </div>
+      </main>
+    </div>
+  );
+};
 
 export default App;
