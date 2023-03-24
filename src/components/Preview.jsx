@@ -6,9 +6,8 @@ import Skills from './Previews/Skills';
 import Experience from './Previews/Experience';
 import Projects from './Previews/Projects';
 
-const Preview = (props) => {
-  const { personalDetails, education, skills, experience, projects } =
-    props.user;
+const Preview = ({ user }) => {
+  const { personalDetails, education, skills, experience, projects } = user;
   return (
     <div className={styles.preview}>
       <PersonalDetails personalDetails={personalDetails} />

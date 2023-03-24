@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '../../styles/PersonalDetailsPreview.module.css';
 
-const PersonalDetails = (props) => {
+const PersonalDetails = ({ personalDetails }) => {
   const { firstName, lastName, email, phoneNumber, linkedin, github, website } =
-    props.personalDetails;
+    personalDetails;
   return (
     <div className={styles.personal_details}>
       <p className={styles.name}>

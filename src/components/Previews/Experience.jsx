@@ -2,8 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../../styles/Preview.module.css';
 
-const Experience = (props) => {
-  const { experience } = props;
+const Experience = ({ experience }) => {
   return (
     <div className={styles.section}>
       <p className={styles.section_title}>EXPERIENCE</p>

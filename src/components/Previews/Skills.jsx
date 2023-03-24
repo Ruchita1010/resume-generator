@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Preview.module.css';
 
-const Skills = (props) => {
-  const { skills } = props;
+const Skills = ({ skills }) => {
   return (
     <div className={styles.section}>
       <p className={styles.section_title}>SKILLS</p>
