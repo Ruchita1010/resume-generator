@@ -36,11 +36,11 @@ A Resume Generator application built with React for TheOdinProject. The app allo
 
 ## Preview
 
-![image](./readme-assets/resume-generator.png)
+![Empty Resume page with input fields on left](https://github.com/Ruchita1010/resume-generator/assets/70577616/6c3161e5-f1f8-4df2-8177-bdcb4f871c8d)
 
 ### When loaded with sample data
 
-![image](./readme-assets/resume-generator-sample-loaded.png)
+![Resume page loaded with sample data with input fields on left](https://github.com/Ruchita1010/resume-generator/assets/70577616/1c49d1af-0879-4078-b592-b09ca6e32be6)
 
 ## Demo
 
