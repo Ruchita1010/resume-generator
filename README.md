@@ -11,7 +11,7 @@ A Resume Generator application built with React for TheOdinProject. The app allo
   Automatic PDF generation and download<br>
 
 - **Sample Data**<br>
-  Load sample data to see how the resume will look like with pre-populated information<br>
+  Load sample data to see how the resume will look with pre-populated information<br>
 
 - **Reset**<br>
   Easily clear all the fields in one go<br>
